@@ -9,7 +9,7 @@ const Header = () => {
    
      </div>
      <div className='nav-view-all'>
-   
+ 
   {/*<Link to="/countries"> <button>View All Coutry Info</button></Link>*/}
   </div>
     </div>
