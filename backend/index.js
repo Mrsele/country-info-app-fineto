@@ -4,7 +4,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 const cors = require("cors");
 const axios = require("axios"); // Add this line for axios
-const PORT = 8000; // We can use process.env.PORT but to make things not complicated i use my port 8000.
+const PORT = 8000; // Declare PORT as a const
+
 app.use(express.json());
 app.use(cors());
 
@@ -20,6 +21,10 @@ app.get('/api/countries/:countryName', async (req, res) => {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
+});
+
+app.get("/", (req, res) => {
+    res.send("Hello world but still Working");
 });
 
 app.listen(PORT, () => {
