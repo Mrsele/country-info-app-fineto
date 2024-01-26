@@ -22,6 +22,23 @@ app.get('/api/countries/:countryName', async (req, res) => {
     }
 });
 
+
+//new
+
+app.get('/api/countries/:countryCode', async (req, res) => {
+    const countryCode = req.params.countryCode;
+  
+    try {
+      const response = await axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`);
+      const countryDetails = response.data;
+      res.json(countryDetails);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+//new end
+
 app.listen(PORT, () => {
     console.log(`Backend server is running ${PORT}`);
 });

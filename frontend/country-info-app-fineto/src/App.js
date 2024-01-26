@@ -4,8 +4,10 @@ import Header from './components/Header';
 import DisplayCountry from './components/DisplayCountry';
 import Footer from './components/Footer';
 import DisplayAll from './components/DisplayAll';
+
 //
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePageBanner from './components/HomePageBanner';
 // import {BrowserRouter,Routes,Route, useNavigate} from 'react-router-dom';
 
 
@@ -49,7 +51,7 @@ function App() {
         <input
           type="text"
           className='searchInput'
-          placeholder="Enter country name"
+          placeholder="Enter the name of the country"
           value={countryName}
           onChange={(e) => setCountryName(e.target.value)}
           onKeyDown={handleKeyPress} 
@@ -57,13 +59,15 @@ function App() {
         <button className='searchButton' onClick={handleSearch} >Search</button>
       </div> 
       </div><br/> <br/>
+ 
     {countryData &&  countryData.name && <DisplayCountry country={countryData}/>}
     
+
     <BrowserRouter>
     <Routes>
       <Route path="/coutries" element={<DisplayAll />} />
     </Routes>
-  </BrowserRouter>
+   </BrowserRouter>
 
       <Footer/>
     </div>

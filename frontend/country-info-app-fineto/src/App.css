@@ -82,7 +82,8 @@
   padding: 50px;
   border-radius: 5px;  
   width: 90%;
-  
+    background: linear-gradient(150deg, #12C2E9, #F64F59 100%);
+
 }
 .container-main{
 

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className='navbar'>
     <div className='nav-logo'>
-    <h1>Country Info App</h1>
+    <h1>World Country Info App</h1>
    
      </div>
      <div className='nav-view-all'>

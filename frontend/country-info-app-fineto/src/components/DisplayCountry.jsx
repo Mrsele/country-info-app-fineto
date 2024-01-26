@@ -1,5 +1,7 @@
 import React from 'react'
 import './DisplayCountry.css'
+import DisplayMap from './DisplayMap';
+
 // const DisplayCountry = () => {
 //   return (
 //     <div>DisplayCountry</div>
@@ -19,8 +21,29 @@ import './DisplayCountry.css'
 const DisplayCountry = (props) => {
    
     const {country} =props;
-  return (
+    //fun for get lang and lattde 
+
+    function getCoordinates(countryco) {
+      const latlng = countryco?.latlng;
     
+      console.log("Latlng Property:", latlng);
+    
+      if (latlng) {
+        if (Array.isArray(latlng) && latlng.length >= 2) {
+          return [latlng[0], latlng[1]];
+        } else if (typeof latlng === 'object' && latlng.lat && latlng.lng) {
+          return [latlng.lat, latlng.lng];
+        }
+      }
+    
+      console.log("Using fallback coordinates: [0, 0]");
+      return [0, 0];
+    }
+    
+    const sampleCoordinates = { lat: 51.505, lng: -0.09 };
+  return (
+    <div>
+    <div>
     <div className='countryContainer'>
     <div className='countryContainer-left'>
   <div className='flag-img'>
@@ -32,20 +55,22 @@ const DisplayCountry = (props) => {
   <div className='coutry-capitalcity'>  <p>Capital: {country.capital}</p></div>
   <p>Languages: {Object.values(country.languages).join(', ')}</p>
   <p>Population: {Intl.NumberFormat('en-US').format(country.population)}</p> 
-  <p>Currency: {country.currencies && country.currencies[0] && country.currencies[0].name}</p>
    {console.log(country.landlocked)}
-  <p>Dialing Code: {country.continents }</p>
+  <p>Continent: {country.continents }</p>
   <p>Area {country.area}</p>
-  <p>Landlocked: {country.landlocked}</p>
-    <p>Time Zone{country.timezones[0]}</p>
-{/* <div className='productdisplay-right-price-old'><p>Languages: {Object.values(country.languages).join(', ')}</p></div>
- */ }
+  <p>Time Zone{country.timezones[0]}</p>
 
-
- 
 </div>
+
+
     </div>
-  
+{/* the bewlow code is for displaying Map  */}
+
+    </div>
+    
+{/**end  map */}
+    </div>
+   
     )
 }
 
