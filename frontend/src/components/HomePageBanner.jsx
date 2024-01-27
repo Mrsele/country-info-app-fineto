@@ -19,7 +19,9 @@ const HomePageBanner = () => {
    
 
     <div>
-    <figure className="max-w-full p-4">
+      <section className="bg-white">
+<div className="mx-auto max-w-5xl px-4 py-8 lg:py-16">
+    <figure className="max-w-full p-4">Geographical Location
       
         <MapContainer center={[0, 0]} zoom={2} className="world-map">
       <TileLayer
@@ -28,6 +30,8 @@ const HomePageBanner = () => {
       />
     </MapContainer>
     </figure>
+    </div>
+    </section>
 </div>
   );
 };

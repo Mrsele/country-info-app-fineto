@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './Footer.css'
 import instagram_icon from './Assets/instagram_icon.png'

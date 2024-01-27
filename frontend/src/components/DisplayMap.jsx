@@ -12,15 +12,15 @@ const DisplayMap = ({ coordinates }) => {
 
   return (
     <div>
-      <figure className="max-w-full p-4">
-        <figcaption className="m-2 text-left text-sm text-gray-500">From Map</figcaption>
+      <figure className="max-w-full p-2">
+        <figcaption className="m-2 text-left text-sm text-gray-500">Geographical Location(Map):</figcaption>
         <MapContainer center={[lat, lng]} zoom={5} className="world-map">
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='Made with free'
           />
           <Marker position={[lat, lng]}>
-            <Popup>A marker indicating this specific location.</Popup>
+            <Popup>This is the Country You /searched .</Popup>
           </Marker>
         </MapContainer>
       </figure>
