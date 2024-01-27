@@ -1,0 +1,123 @@
+.countryContainer {
+    display: flex;
+    flex-direction: column; /* Display children in a column */
+    align-items: center; /* Center items horizontally */
+    padding-top: 30px;
+    height: 400px;
+    padding: 20px;
+}
+
+.flag-and-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add some space between the flag and the country name */
+}
+
+.countryContainer-main-img {
+    width: 280px; /* Adjust the width of the flag */
+    height: 80px; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add space between flag and name */
+    padding-left: 250px;
+}
+
+.country-name {
+    font-size: 54px; /* Set the font size for the country name */
+    font-weight: 700;
+}
+
+.country-info {
+    font-size: 28px; /* Set the font size for other information */
+    align-items: flex-start;
+    width: 50%;
+}
+
+
+
+
+.country-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .country-info th, .country-info td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .country-info th {
+    background-color: #f2f2f2;
+  }
+  .hero-landing-page{
+
+    text-align: center;
+    padding: 50px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .countryContainer{
+    display: flex;
+    margin: 0px;
+    margin-left: 45px;
+    padding-top: 30px;
+    height: 400px;
+}
+.countryContainer-left{
+    display: flex;
+    gap: 70px;
+}
+ 
+.countryContainer-main-img{
+width: 800px;
+height: 400px;
+
+}
+.countryContainer-right{
+    margin: 0px 150px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(150deg, #ac95a6, #9b91b9 100%);
+    width: 500px;
+
+
+    box-sizing: border-box;
+    padding: 2em;
+    font-weight: 600;
+    border-radius: 25px;
+    color: white;
+   
+    box-shadow: 5px 5px 10px #ccc;
+    float: left;
+ 
+}
+.countryContainer-right h1{
+
+    color: #3d3d3d;
+    font-size: 40px;
+    font-weight: 700;
+}
+.country-landlocked {
+    color: #818181;
+    text-decoration: line-through;
+
+}
+.coutry-capitalcity{
+    /* //color: #ff4141; */
+
+/*}*/
+ 

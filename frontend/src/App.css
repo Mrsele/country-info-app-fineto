@@ -40,7 +40,7 @@
 .searchInput {
   display: inline-block;  
   align-items: center;
-  z-index: 2;
+  /* z-index: 2; */
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -51,6 +51,7 @@
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   border: 0;
   outline: 0;
+  height: 40px;
 }
 
 /* Search Button */
@@ -64,6 +65,7 @@
   border: 1px solid grey;
   border-left: none;  
   cursor: pointer;
+  height: 62px;
 }
  
 .searchButton:hover {
@@ -82,7 +84,7 @@
   padding: 50px;
   border-radius: 5px;  
   width: 90%;
-    background: linear-gradient(150deg, #12C2E9, #F64F59 100%);
+    /* background: linear-gradient(150deg, #12C2E9, #F64F59 100%); */
 
 }
 .container-main{
@@ -91,4 +93,8 @@
   justify-content: center;
   align-items: center;
   height: 15vh;
+}
+.hero-landing-page {
+  text-align: center;
+  padding: 50px;
 }

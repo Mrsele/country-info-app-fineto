@@ -15,23 +15,42 @@ import HomePageBanner from './components/HomePageBanner';
 function App() {
   const [countryName, setCountryName] = useState('');
   const [countryData, setCountryData] = useState(null);
-
-  const handleSearch = async (e) => {
-    // e.preventDefault(); 
-       try {
+  const handleSearch = async () => {
+    try {
+      // Reset countryData and any previous errors
+      setCountryData(null);
+  
+      // Basic validation for empty input
+      if (!countryName.trim()) {
+        alert('Please enter the name of the country.');
+        return;
+      }
+  
+      // Advanced validation for invalid characters and numbers
+      if (/[^a-zA-Z\s]/.test(countryName)) {
+        alert('Invalid characters or numbers in the country name. Please enter a valid country name.');
+        return;
+      }
+  
       const response = await fetch(`http://localhost:8000/api/countries/${countryName}`);
       const data = await response.json();
-      console.log(data);
-       if (data && data.name && data.name.common) {
+  
+      if (data && data.name && data.name.common) {
+        // Valid country data found
         setCountryData(data);
       } else {
-        console.error('Invalid or missing data:', data);
-       }
+        // No valid country data found
+        alert('No country found with the given name. Please enter a valid country name.');
+      }
     } catch (error) {
+      // Handle server errors
       console.error('Error fetching data:', error);
+      alert('An error occurred while fetching data. Please try again later.');
     }
   };
-  //
+  
+  
+  // i want to add Event listner for Enter 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSearch();
@@ -61,8 +80,9 @@ function App() {
       </div><br/> <br/>
  
     {countryData &&  countryData.name && <DisplayCountry country={countryData}/>}
-    
-
+    {!countryData &&  <div className="hero-landing-page">
+      <HomePageBanner/>
+      </div>}
     <BrowserRouter>
     <Routes>
       <Route path="/coutries" element={<DisplayAll />} />

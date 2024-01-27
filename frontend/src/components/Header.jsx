@@ -9,7 +9,9 @@ const Header = () => {
    
      </div>
      <div className='nav-view-all'>
- 
+  View All
+
+  About Me 
   {/*<Link to="/countries"> <button>View All Coutry Info</button></Link>*/}
   </div>
     </div>

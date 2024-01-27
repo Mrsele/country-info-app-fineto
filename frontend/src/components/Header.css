@@ -1,10 +1,12 @@
-.navbar{
+
+ .navbar{
 
     display: flex;
     justify-content: space-around;
-     padding: 50 px;
+     /* padding: 50 px; */
      box-shadow: 0 1px 3px -2px black;
-     
+    
+     height: 100px;
 }
 .nav-logo{
 display: flex;
@@ -12,7 +14,7 @@ align-items: center;
 gap: 80px;
 }
 .nav-logo h1{
-
+cursor: pointer;
     
 }
 
@@ -71,4 +73,4 @@ gap: 80px;
     }
   
    
-  }
+  } 

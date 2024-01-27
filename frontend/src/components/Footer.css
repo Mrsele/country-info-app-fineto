@@ -24,6 +24,7 @@
 .footer-social-icons{
     display: flex;
     gap: 20px;
+    padding-top: 20px;
 
 }
 .footer-icons-container{

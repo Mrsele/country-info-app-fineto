@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className='footer'>
-    <p>Contact Me </p>
     
 <div className='footer-social-icons'>
 <div className='footer-icons-container'>
@@ -19,7 +18,7 @@ const Footer = () => {
 
 
 <div className='footer-icons-container'>
-<a href="https://www.whatsup.com" target="_blank" rel="noopener noreferrer">
+<a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
 <img src={whatsup_icon} alt='' />
 </a>
 

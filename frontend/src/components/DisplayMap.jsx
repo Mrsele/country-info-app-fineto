@@ -16,21 +16,20 @@ const DisplayMap = ({ coordinates }) => {
   
     return (
         
-      <MapContainer 
-        center={[51.505, -0.09]}
-        zoom={4}
-        scrollWheelZoom={false}
-        style={{ width: '100%', height: '60vh' }}
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        <Marker position={[51.505, -0.09]}>
-          <Popup>Country Location</Popup>
-        </Marker>
-      </MapContainer>
-    
+     
+    //
+<MapContainer center={[lat, lng]} zoom={9} className="world-map">
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='Made with free'
+      />
+      <Marker position={coordinates}>
+        <Popup>
+          A marker indicating a specific location.
+        </Popup>
+      </Marker>
+    </MapContainer>
+    //
     );
   };
   
