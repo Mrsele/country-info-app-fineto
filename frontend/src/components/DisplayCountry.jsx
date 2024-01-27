@@ -50,46 +50,40 @@ const DisplayCountry = (props) => {
 
     return (
       <div>
-      <div className='countryContainer'>
-          <div className='flag-and-name'>
-          <h1 className='country-name'>  {country.name.common}</h1>
-              <img className='countryContainer-main-img' src={country.flags && country.flags.png} alt="Country Flag" />
-              
-          </div>
-          <div className='country-info'>
-  <table width={'100%'}>
-    <tbody>
-      <tr>
-        <th>Capital</th>
-        <td>{country.capital}</td>
-      </tr>
-      <tr>
-        <th>Languages</th>
-        <td>{Object.values(country.languages).join(', ')}</td>
-      </tr>
-      <tr>
-        <th>Population</th>
-        <td>{Intl.NumberFormat('en-US').format(country.population)}</td>
-      </tr>
-      <tr>
-        <th>Continent</th>
-        <td>{country.continents}</td>
-      </tr>
-      <tr>
-        <th>Area(km²)</th>
-        <td>{country.area}</td>
-      </tr>
-      <tr>
-        <th>Time Zone</th>
-        <td>{country.timezones[0]}</td>
-      </tr>
-    </tbody>
-  </table>
+     
+{/** new  */}
+
+
+<div className="m-2  gap-4 p-2 grid grid-cols-[3fr,2fr]">
+       
+<div className="">
+    <h2 className="mb-2 text-lg font-semibold text-gray-900"> {country.name.common}:</h2>
+    <ul className="max-w-full list-inside list-disc space-y-1 text-gray-500 text-left ml-60 ">
+        <li><span className="font-bold">Capital:</span> {country.capital}</li>
+        <li><span className="font-bold">Languages:</span>{Object.values(country.languages).join(', ')}</li>
+        <li><span className="font-bold">Population:</span>{Intl.NumberFormat('en-US').format(country.population)}</li>
+        <li><span className="font-bold">Continent:</span>{country.continents}</li>
+        <li><span className="font-bold">Area(Km²):</span> {country.area}</li>
+        <li><span className="font-bold">Time Zone:</span> {country.timezones[0]}</li>
+    </ul>
 </div>
 
-      </div>
+
+<div className="">
+    <figure className="max-w-lg">
+        <img className="h-auto max-w-full rounded-lg" src={country.flags && country.flags.png} alt="Country Flag"
+            />
+        <figcaption className="mt-2 text-center text-sm text-gray-500 ">Flag of {country.name.common}</figcaption>
+    </figure>
+</div>
+</div>
+
+
+
+{/** new end */}
+
       <div className="hero-landing-page">
-      <DisplayMap coordinates={ getCoordinates(country)}/>
+      <DisplayMap coordinates={country.latlng /*getCoordinates(country)*/}/>
   </div>
   </div>
     );

@@ -3,18 +3,28 @@ import './Header.css'
 import { Link } from 'react-router-dom';
 const Header = () => {
   return (
-    <div className='navbar'>
-    <div className='nav-logo'>
-    <h1>World Country Info App</h1>
-   
-     </div>
-     <div className='nav-view-all'>
-  View All
+    
 
-  About Me 
-  {/*<Link to="/countries"> <button>View All Coutry Info</button></Link>*/}
+
+
+
+
+
+
+
+  
+
+<div className="bg-gray-800 text-white p-4">
+  <div className="container mx-auto flex justify-between items-center">
+    <h1 className="text-xl font-bold">Country Information</h1>
+    <nav className="flex space-x-4">
+      <p className="text-white hover:text-gray-300">View All Countries</p>
+      <p className="text-white hover:text-gray-300">About Me</p>
+    </nav>
   </div>
-    </div>
+</div>
+
+   
      
   )
 }

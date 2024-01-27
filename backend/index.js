@@ -21,10 +21,7 @@ app.get('/api/countries/:countryName', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
-
 //new
-
 app.get('/api/countries/:countryCode', async (req, res) => {
     const countryCode = req.params.countryCode;
   
