@@ -4,7 +4,7 @@ import DisplayMap from './DisplayMap';
 
 const DisplayCountry = (props) => {
     const { country } = props;
-
+      console.log(country);
     // Function to get coordinates
 
     function getCoordinates(countryco) {
@@ -26,27 +26,7 @@ const DisplayCountry = (props) => {
       console.log("Using fallback coordinates: [0, 0]");
       return [0, 0];
   }
-  
-
-
-
-
-    // function getCoordinates(countryco) {
-    //     const latlng = countryco?.latlng;
-
-    //     if (latlng) {
-    //         if (Array.isArray(latlng) && latlng.length >= 2) {
-    //             return [latlng[0], latlng[1]];
-    //         } else if (typeof latlng === 'object' && latlng.lat && latlng.lng) {
-    //             return [latlng.lat, latlng.lng];
-    //         }
-    //     }
-
-    //     console.log("Using fallback coordinates: [0, 0]");
-    //     return [0, 0];
-    // }
-
-    const sampleCoordinates = { lat: 12.505, lng: -0.12 };
+      const sampleCoordinates = { lat: 12.505, lng: -0.12 };
 
     return (
       <div>
