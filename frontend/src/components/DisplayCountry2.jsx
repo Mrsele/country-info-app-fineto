@@ -79,7 +79,7 @@ useEffect(() => {
     <section className="bg-white">
      <div className="mx-auto max-w-5xl px-4 py-8 lg:py-16">
     <div className="m-2 gap-4 p-2 grid grid-cols-[3fr,2fr]">
-      {country && (
+       
         <div className="">
           <h2 className="mb-2 text-2xl font-semibold text-gray-900 ml-60">{country.name.common}:</h2>
           <ul className="max-w-full list-inside list-disc space-y-1 text-gray-500 text-left ml-60 ">
@@ -91,25 +91,26 @@ useEffect(() => {
             <li><span className="font-bold">Time Zone:</span> {country.timezones[0]}</li>
           </ul>
         </div>
-      )}
+     
 
-      {country && (
+       
         <div className="">
           <figure className="max-w-lg">
             <img className="h-auto max-w-full rounded-lg" src={country.flags && country.flags.png} alt="Country Flag" />
             <figcaption className="mt-2 text-center text-sm text-gray-500 ">Flag of {country.name.common}</figcaption>
           </figure>
         </div>
-      )}
+     
 
-      {/* DisplayMap component */}
-      {country && (
-        <div className="hero-landing-page">
-          <DisplayMap coordinates={getCoordinates(country) /* or country.latlng */} />
         </div>
-      )}
+         
+       <div className="hero-landing-page">
+       <DisplayMap coordinates={getCoordinates(country) /* or country.latlng */} />
+  
+     </div>
+     
 
-    </div>
+    
     </div>
         </section>
   );
