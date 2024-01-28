@@ -19,9 +19,9 @@ const HomePageBanner = () => {
    
 
     <div>
-      <section className="bg-white">
-<div className="mx-auto max-w-5xl px-4 py-8 lg:py-16">
-    <figure className="max-w-full p-4">Geographical Location
+      <section className="bg-white ">
+<div className="mx-auto max-w-5xl px-4 py-8 lg:py-16 mt-0 pt-0">
+    <figure className="max-w-full p-4 mt-0 pt-0">Geographical Location
       
         <MapContainer center={[0, 0]} zoom={2} className="world-map">
       <TileLayer

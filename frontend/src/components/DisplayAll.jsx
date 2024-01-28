@@ -30,7 +30,7 @@ const DisplayAll = () => {
 
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div className='h-64 ml-80 mt-40'> Loading...</div>;
   }
 
   if (error) {

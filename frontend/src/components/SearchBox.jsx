@@ -33,16 +33,16 @@ const SearchBox = () => {
   };
   return (
     
-<section className="bg-white">
+<section className="bg-white mb-0 pb-0 h-32">
 <div className="mx-auto max-w-5xl px-4 py-8 lg:py-16">
     <h2 className="mb-4 text-xl font-bold text-gray-900">Fineto World Country Info Apps </h2>
 
     
-    <form className="flex items-center">
+    <form className="flex items-center mb-0">
         <label htmlFor="voice-search" className="sr-only">Search</label>
         <div className="relative w-full">
             <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
-                <svg className="h-4 w-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg className="h-4 w-4 text-gray-500 " aria-hidden="true"  
                     fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />

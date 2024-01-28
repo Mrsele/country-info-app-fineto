@@ -7,16 +7,21 @@ const DisplayCountry = () => {
   const [country, setCountryData] = useState(null);
   const { countryName } = useParams();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const handleSearch = async () => {
       try {
         setCountryData(null);
+        setError(null);
+        setLoading(true);
 
         const response = await fetch(`http://localhost:8000/api/countries/${countryName}`);
         if (!response.ok) {
           console.error('Error fetching data:', response.status);
           alert('No country found with the given name. Please enter a valid country name.');
+          setError("Error Occured");
+
           return;
         }
 
@@ -40,7 +45,11 @@ const DisplayCountry = () => {
   }, [countryName]);
   
   if (loading) {
-    return <p>Loading...</p>;
+    return <div className='h-64'> Loading...</div>;
+  }
+  
+  if (error) {
+    return <div className="text-red-900 ml-60 h-80 mt-20">Error: {error}</div>;
   }
   return (
     <div>

@@ -67,14 +67,13 @@ useEffect(() => {
   }
   
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='ml-60'><h2>Loading...</h2></div>;
   }
   
   if (error) {
     return <div className="text-red-900 ml-60">Error: {error}</div>;
   }
-  console.log("The country is ----",country);
-
+ 
   return (
     <section className="bg-white">
      <div className="mx-auto max-w-5xl px-4 py-8 lg:py-16">
