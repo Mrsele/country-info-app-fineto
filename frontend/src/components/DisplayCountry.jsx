@@ -20,7 +20,7 @@ const DisplayCountry = () => {
         if (!response.ok) {
           console.error('Error fetching data:', response.status);
           alert('No country found with the given name. Please enter a valid country name.');
-          setError("Error Occured");
+          setError(" ");
 
           return;
         }
@@ -49,7 +49,7 @@ const DisplayCountry = () => {
   }
   
   if (error) {
-    return <div className="text-red-900 ml-60 h-80 mt-20">Error: {error}</div>;
+    return <div className="text-red-900 ml-60 h-80 mt-20">  {error}</div>;
   }
   return (
     <div>

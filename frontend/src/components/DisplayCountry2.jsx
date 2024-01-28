@@ -67,7 +67,7 @@ useEffect(() => {
   }
   
   if (loading) {
-    return <div className='ml-60'><h2>Loading...</h2></div>;
+    return <div className='ml-60 mt-20 h-40'><h2>Loading...</h2></div>;
   }
   
   if (error) {
@@ -81,7 +81,7 @@ useEffect(() => {
        
         <div className="">
           <h2 className="mb-2 text-2xl font-semibold text-gray-900 ml-60">{country.name.common}:</h2>
-          <ul className="max-w-full list-inside list-disc space-y-1 text-gray-500 text-left ml-60 ">
+          <ul className="max-w-full list-inside list-disc space-y-1 text-gray-500 text-left ml-40 ">
             <li><span className="font-bold">Capital:</span> {country.capital}</li>
             <li><span className="font-bold">Languages:</span>{Object.values(country.languages).join(', ')}</li>
             <li><span className="font-bold">Population:</span>{Intl.NumberFormat('en-US').format(country.population)}</li>
