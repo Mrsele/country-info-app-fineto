@@ -1,18 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import DisplayMap from './DisplayMap';
+import './DisplayCountry.css';
 
 const DisplayCountry2 = () => {
-  const { code } = useParams();
-  const [country, setCountry] = useState(null);
+  const { countryCode } = useParams();
+const [country, setCountryData] = useState(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+useEffect(() => {
+  const handleSearch = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      setCountryData(null);
+       const response = await fetch(`http://localhost:8000/api/country/${countryCode}`);
+      //  const response = await fetch('https://restcountries.com/v3.1/all');
 
-  useEffect(() => {
-    // Fetch country data from your backend using the provided country code
-    fetch(`http://localhost:8000/api/countries/${code}`)
-      .then(response => response.json())
-      .then(data => setCountry(data))
-      .catch(error => console.error('Error fetching country data:', error));
-  }, [code]); // Trigger useEffect whenever the code changes
+      if (!response.ok) {
+        console.error('Error fetching data:', response.status);
+        const errorMessage = await response.text(); // or response.json() depending on the error response format
+        setError(errorMessage);
+        return;
+        
+      }
+
+      const data = await response.json();
+
+      if (Array.isArray(data) && data.length > 0 && data[0].name && data[0].name.common) {
+        setCountryData(data[0]);
+      } else {
+        console.error('Invalid country data:', data);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      alert('An error occurred while fetching data. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Call the function within useEffect
+  handleSearch();
+
+  // Log countryCode here
+
+}, [countryCode]);
+
 
   // Function to get coordinates
   function getCoordinates(countryco) {
@@ -31,6 +65,15 @@ const DisplayCountry2 = () => {
     console.log("Using fallback coordinates: [0, 0]");
     return [0, 0];
   }
+  
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  
+  if (error) {
+    return <div className="text-red-900 ml-60">Error: {error}</div>;
+  }
+  console.log("The country is ----",country);
 
   return (
     <section className="bg-white">

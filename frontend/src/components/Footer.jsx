@@ -2,7 +2,6 @@
 import React from 'react'
 import './Footer.css'
 import instagram_icon from './Assets/instagram_icon.png'
- 
 import whatsup_icon from './Assets/whatsapp_icon.png'
 import { Link } from 'react-router-dom';
 const Footer = () => {

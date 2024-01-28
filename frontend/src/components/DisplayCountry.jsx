@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 const DisplayCountry = () => {
   const [country, setCountryData] = useState(null);
   const { countryName } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleSearch = async () => {
@@ -25,17 +26,22 @@ const DisplayCountry = () => {
           setCountryData(data);
         } else {
           console.error('Invalid country data:', data);
-          alert('No country found with the given name. Please enter a valid country name.');
+          // alert('No country found with the given name. Please enter a valid country name.');
         }
       } catch (error) {
         console.error('Error fetching data:', error);
         alert('An error occurred while fetching data. Please try again later.');
+      }finally {
+        setLoading(false);
       }
     };
 
     handleSearch();
   }, [countryName]);
-
+  
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div>
       {country && country.name && (
