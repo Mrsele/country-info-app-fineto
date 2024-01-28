@@ -26,7 +26,7 @@ const HomePageBanner = () => {
         <MapContainer center={[0, 0]} zoom={2} className="world-map">
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='Made with free'
+        attribution='Fineto'
       />
     </MapContainer>
     </figure>

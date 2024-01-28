@@ -17,7 +17,7 @@ const DisplayMap = ({ coordinates }) => {
         <MapContainer center={[lat, lng]} zoom={5} className="world-map">
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='Made with free'
+            attribution='Fineto'
           />
           <Marker position={[lat, lng]}>
             <Popup>This is the Country You /searched .</Popup>

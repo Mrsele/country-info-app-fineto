@@ -1,1 +1,1 @@
-# Here is A readme File before 
+# Here World Contries information Explorer up ,i made this as a home assignement to Fineto .
