@@ -11,6 +11,7 @@ const DisplayAll = () => {
  useEffect(() => {
   const fetchData = async () => {
     try {
+      //Fetching  all Data from restcountries  
       const response = await fetch('https://restcountries.com/v3.1/all');
       // const response = await fetch('http://localhost:8000/api/countries');
       if (!response.ok) {
@@ -30,10 +31,12 @@ const DisplayAll = () => {
 
 
   if (loading) {
+    // Displayed When Loading 
     return <div className='h-64 ml-80 mt-40'> Loading...</div>;
   }
 
   if (error) {
+    //When incountering error
     return <p>Error: {error}</p>;
   }
 

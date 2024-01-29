@@ -1,7 +1,4 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import './HomePageBanner.css'
- /////////////////////////////////////////////////////////
-
  import React, { useEffect, useState } from "react";
 import {
   ComposableMap,

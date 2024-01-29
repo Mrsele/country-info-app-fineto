@@ -3,7 +3,7 @@ import React from 'react';
 import './AboutMe.css'; 
 
 const AboutMe = () => {
-  const image = "https://portal.hagbes.com/mrf/images/solomon_yeshiwas.png";
+  const image = "https://portal.hagbes.com/mrf/images/solomon_yeshiwas.png";  //my image from online Source
   return (
     <div className="about-me-container">
       <div className="profile-picture">

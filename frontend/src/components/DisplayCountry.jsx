@@ -15,7 +15,7 @@ const DisplayCountry = () => {
         setCountryData(null);
         setError(null);
         setLoading(true);
-
+                 // fetch from our backend based on the country name
         const response = await fetch(`http://localhost:8000/api/countries/${countryName}`);
         if (!response.ok) {
           console.error('Error fetching data:', response.status);
@@ -27,7 +27,7 @@ const DisplayCountry = () => {
 
         const data = await response.json();
 
-        if (data && data.name && data.name.common) {
+        if (data && data.name && data.name.common) { // check if there data in the response object 
           setCountryData(data);
         } else {
           console.error('Invalid country data:', data);

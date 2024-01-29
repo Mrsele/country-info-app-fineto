@@ -14,9 +14,9 @@ useEffect(() => {
       setLoading(true);
       setError(null);
       setCountryData(null);
+      // Fetch from our backend endpoint based on country code 
        const response = await fetch(`http://localhost:8000/api/country/${countryCode}`);
-      //  const response = await fetch('https://restcountries.com/v3.1/all');
-
+ 
       if (!response.ok) {
         console.error('Error fetching data:', response.status);
         const errorMessage = await response.text(); // or response.json() depending on the error response format
@@ -26,7 +26,7 @@ useEffect(() => {
       }
 
       const data = await response.json();
-
+     // Checking if there is data 
       if (Array.isArray(data) && data.length > 0 && data[0].name && data[0].name.common) {
         setCountryData(data[0]);
       } else {

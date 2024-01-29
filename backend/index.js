@@ -7,7 +7,7 @@ const axios = require("axios"); // Add this line for axios
 const PORT = 8000; // We can use process.env.PORT but to make things not complicated i use my port 8000.
 app.use(express.json());
 app.use(cors());
- // https://restcountries.com/v3.1/all
+ // Getting Country When Searched
 app.get('/api/countries/:countryName', async (req, res) => {
     const countryName = req.params.countryName;
   
@@ -21,7 +21,7 @@ app.get('/api/countries/:countryName', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-//new tld
+//Fetch Based on Country Code
 app.get('/api/country/:countryCode', async (req, res) => {
     const countryCode = req.params.countryCode;
   
@@ -34,7 +34,8 @@ app.get('/api/country/:countryCode', async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-//new end
+  
+//Geting allCountries Data
 app.get('/api/countries', async (req, res) => {
   try {
     const response = await fetch('https://restcountries.com/v3.1/all');

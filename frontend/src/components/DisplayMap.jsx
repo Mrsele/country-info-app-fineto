@@ -12,6 +12,7 @@ const DisplayMap = ({ coordinates }) => {
 
   return (
     <div>
+{/** For displaying a map  */}
       <figure className="max-w-full p-2">
         <figcaption className="m-2 text-left text-sm text-gray-500">Geographical Location(Map):</figcaption>
         <MapContainer center={[lat, lng]} zoom={5} className="world-map">

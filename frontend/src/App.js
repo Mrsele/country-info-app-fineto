@@ -10,7 +10,7 @@ import SearchBox from './components/SearchBox';
  import {BrowserRouter,Routes,Route, useNavigate} from 'react-router-dom';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
-// import './style/style.css';
+ 
 
 function App() {
   return (
