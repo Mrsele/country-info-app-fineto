@@ -21,6 +21,29 @@ app.get('/api/countries/:countryName', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+//Feaching feed results 
+app.get('/api/feedcountries/:countryName', async (req, res) => {
+  const countryName = req.params.countryName;
+
+  try {
+    const response = await fetch('https://restcountries.com/v3.1/all');
+    const data = await response.json();
+
+    // Filter countries based on the search term
+    const filteredCountries = data.filter(country => country.name.common.toLowerCase().startsWith(countryName.toLowerCase()));
+    console.log(filteredCountries);
+    res.json(filteredCountries);
+  } catch (error) {
+    console.error('Error fetching country data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+
+
+
 //Fetch Based on Country Code
 app.get('/api/country/:countryCode', async (req, res) => {
     const countryCode = req.params.countryCode;
@@ -34,7 +57,7 @@ app.get('/api/country/:countryCode', async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-  
+
 //Geting allCountries Data
 app.get('/api/countries', async (req, res) => {
   try {
@@ -48,7 +71,7 @@ app.get('/api/countries', async (req, res) => {
   }
 });
 
-//
+// 
 app.listen(PORT, () => {
     console.log(`Backend server is running ${PORT}`);
 });

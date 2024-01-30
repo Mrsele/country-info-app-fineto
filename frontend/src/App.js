@@ -10,6 +10,7 @@ import SearchBox from './components/SearchBox';
  import {BrowserRouter,Routes,Route, useNavigate} from 'react-router-dom';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
+import SearchFeed from './components/SearchFeed';
  
 
 function App() {
@@ -20,12 +21,13 @@ function App() {
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/search/:countryName" element={<DisplayCountry />} />
+    <Route path='/feed/:countryName' element={<SearchFeed/>}/>
     <Route path="/about" element={<AboutMe />} />
 
     <Route path="/all-countries" element={<DisplayAll />} />
     <Route path="/country/:countryCode" element={<DisplayCountry2 />} />
     </Routes>
-    <Footer/>
+{   /* <Footer/>*/}
     </BrowserRouter>
   
   

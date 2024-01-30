@@ -19,7 +19,7 @@ const SearchBox = () => {
         return;
       }
   if(countryName){
-    navigate(`/search/${countryName}`);
+    navigate(`/feed/${countryName}`);
   }
      
   };
