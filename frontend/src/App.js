@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import './App.css';
 import Header from './components/Header';
-import DisplayCountry from './components/DisplayCountry';
+// import DisplayCountry from './components/DisplayCountry';
 import Footer from './components/Footer';
 import DisplayAll from './components/DisplayAll';
 import DisplayCountry2 from './components/DisplayCountry2';
@@ -20,14 +20,14 @@ function App() {
     <SearchBox/>
     <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/search/:countryName" element={<DisplayCountry />} />
+ {/*} <Route path="/search/:countryName" element={<DisplayCountry />} />  */}
     <Route path='/feed/:countryName' element={<SearchFeed/>}/>
     <Route path="/about" element={<AboutMe />} />
 
     <Route path="/all-countries" element={<DisplayAll />} />
     <Route path="/country/:countryCode" element={<DisplayCountry2 />} />
     </Routes>
-{   /* <Footer/>*/}
+  <Footer/>
     </BrowserRouter>
   
   
